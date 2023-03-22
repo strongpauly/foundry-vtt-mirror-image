@@ -26,7 +26,8 @@ export class MirrorImage {
     constructor() {
         Hooks.on('renderTokenHUD', (token) => {
             const placeable = getPlaceable(token);
-            if(typeof placeable.document.getFlag(SCOPE, COUNT_KEY) === 'number') {
+            const imageCount =  placeable.document.getFlag(SCOPE, COUNT_KEY);
+            if(typeof imageCount === 'number') {
                 this.renderHud(token, placeable.document)
 
             }
