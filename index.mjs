@@ -1,5 +1,5 @@
 import { MirrorImage } from "./MirrorImage.mjs";
-const MACRO_VERSION = 1;
+const MACRO_VERSION = 2;
 const MACRO_NAME = "ToggleMirrorImage";
 
 async function getMacroData() {
@@ -15,7 +15,8 @@ Hooks.once('ready', async function(){
   window.MirrorImage = new MirrorImage();
   let macro = game.macros.getName(MACRO_NAME);
   const macroData = await getMacroData();
-  if(!macro) {
+  if(!macro || macro.flags?.version !== MACRO_VERSION) {
+    console.log(`Creating macro ${MACRO_NAME}`)
     macro = await Macro.create(Object.assign({
       "type": "script",
       "scope": "global",
