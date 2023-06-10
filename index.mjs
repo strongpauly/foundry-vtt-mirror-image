@@ -25,7 +25,6 @@ Hooks.once('ready', async function(){
     }, macroData));
   } else if(macro.flags?.version !== MACRO_VERSION) {
     console.log(`Updating macro ${MACRO_NAME} to ${MACRO_VERSION}`);
-    macro = Object.assign(macro, macroData)
+    await macro.update(macroData)
   }
-  game.macros.set(macro.name, macro);
 });
