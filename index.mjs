@@ -2,19 +2,19 @@ import { MirrorImage } from "./MirrorImage.mjs";
 const MACROS = [
   {
     name: "ToggleMirrorImage",
-    src: "modules/foundry-vtt-mirror-image/ToggleMacro.js",
+    src: "modules/foundry-vtt-mirror-image/macros/ToggleMacro.js",
     version: 2,
     img: "icons/magic/defensive/illusion-evasion-echo-purple.webp",
   },
   {
     name: "MirrorImageOn",
-    src: "modules/foundry-vtt-mirror-image/OnMacro.js",
+    src: "modules/foundry-vtt-mirror-image/macros/OnMacro.js",
     version: 1,
     img: "icons/magic/defensive/illusion-evasion-echo-purple.webp",
   },
   {
     name: "MirrorImageOff",
-    src: "modules/foundry-vtt-mirror-image/OffMacro.js",
+    src: "modules/foundry-vtt-mirror-image/macros/OffMacro.js",
     version: 1,
     img: "icons/magic/defensive/illusion-evasion-echo-purple.webp",
   },
