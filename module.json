@@ -2,7 +2,7 @@
   "id": "foundry-vtt-mirror-image",
   "title": "Dnd5e Mirror Image",
   "description": "Simple module to handle the mirror image spell",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "authors": [
     {
       "name": "Paul Potsides",
@@ -14,10 +14,10 @@
     "index.mjs"
   ],
   "url": "https://github.com/strongpauly/foundry-vtt-mirror-image",
-  "download": "https://github.com/strongpauly/foundry-vtt-mirror-image/archive/refs/tags/1.0.5.zip",
-  "manifest": "https://raw.githubusercontent.com/strongpauly/foundry-vtt-mirror-image/1.0.5/module.json",
+  "download": "https://github.com/strongpauly/foundry-vtt-mirror-image/archive/refs/tags/1.0.6.zip",
+  "manifest": "https://raw.githubusercontent.com/strongpauly/foundry-vtt-mirror-image/1.0.6/module.json",
   "compatibility": {
-    "minimum": "10",
+    "minimum": "11",
     "verified": "12",
     "maximum": "12"
   },
