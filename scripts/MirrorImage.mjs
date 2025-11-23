@@ -3,12 +3,12 @@ const SCOPE = "foundry-vtt-mirror-image";
 const COUNT_KEY = "mirrorImageCount";
 const BUTTONS_ID = "mirrorImageButtons";
 
-function renderButton(numImages, isActive) {
+function renderButton(numImages, isActive, maxImages) {
 	return `<div id="mirrorImages${numImages}" class="control-icon${
 		isActive ? " active" : ""
 	}" style="margin-top:0px;overflow:hidden;" data-tooltip="${numImages} image${numImages === 1 ? "" : "s"}">
     <img src="icons/magic/defensive/illusion-evasion-echo-purple.webp" style="margin:0;filter:grayscale(${
-		(1 - numImages / 3) * 100
+		(1 - numImages / maxImages) * 100
 	}%);"/>
 </div>`;
 }
@@ -39,17 +39,19 @@ export class MirrorImage {
 	async renderHud(hud, document) {
 		const token = hud.object;
 		const imagesLeft = document.flags[SCOPE][COUNT_KEY];
-		const middle = jQuery(".col.middle").first();
-		middle.append(`<div id="${BUTTONS_ID}" style="display:flex;position:absolute;bottom:-65px;align-items:center;gap:12px">
-        ${renderButton(1, imagesLeft === 1)}
-        ${renderButton(2, imagesLeft === 2)}
-        ${renderButton(3, imagesLeft === 3)}
+
+		const maxImages = game.system.id === "pf1" ? 8 : 3;
+		const imageCounts = new Array(maxImages).fill(null).map((_v, index) => index + 1);
+
+		const parent = jQuery(".col.middle").first();
+		parent.append(`<div id="${BUTTONS_ID}" class="mirror-image-buttons">
+		${imageCounts.map((count) => renderButton(count, imagesLeft === count, maxImages)).join("")}
     </div>`);
-		[1, 2, 3].forEach((count) => {
-			middle.on("click", `#mirrorImages${count}`, async () => {
+		imageCounts.forEach((count) => {
+			parent.on("click", `#mirrorImages${count}`, async () => {
 				await document.setFlag(SCOPE, COUNT_KEY, count);
 				await this.updateImages(token);
-				[1, 2, 3].forEach((other) => {
+				imageCounts.forEach((other) => {
 					if (other === count) {
 						jQuery(`#mirrorImages${other}`).addClass("active");
 					} else {

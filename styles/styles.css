@@ -1,0 +1,11 @@
+.mirror-image-buttons {
+    display:flex;
+    position:absolute;
+    bottom: -48px;
+    align-items:center;
+    gap: 6px;
+}
+
+.system-pf1 .mirror-image-buttons {
+    bottom: -95px;
+}

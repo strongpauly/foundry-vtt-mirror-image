@@ -1,7 +1,7 @@
 {
   "id": "foundry-vtt-mirror-image",
-  "title": "Dnd5e Mirror Image",
-  "description": "Simple module to handle the mirror image spell",
+  "title": "Mirror Image",
+  "description": "Module to handle the mirror image spell in D&D and Pathfinder",
   "version": "#{VERSION}#",
   "authors": [
     {
@@ -13,6 +13,7 @@
   "esmodules": [
     "scripts/index.mjs"
   ],
+  "styles": ["styles/styles.css"],
 	"url": "#{URL}#",
 	"manifest": "#{MANIFEST}#",
 	"download": "#{DOWNLOAD}#",
