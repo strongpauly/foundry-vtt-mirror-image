@@ -143,3 +143,12 @@ jobs:
           artifacts: './module.json, ./module.zip'
           tag: ${{ github.event.release.tag_name }}
           body: ${{ github.event.release.body }}
+
+      - name: Foundry Website Update
+        id: foundry-website-update
+        uses: foundryvtt-dcc/foundry-package-release-action@main
+        with:
+          actionToken: ${{ secrets.GITHUB_TOKEN }}
+          manifestFileName: "module.json"
+          foundryToken: ${{ secrets.FOUNDRY_PACKAGE_RELEASE_TOKEN }}
+          dryRun: false

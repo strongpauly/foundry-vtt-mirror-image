@@ -15,7 +15,7 @@
   ],
   "styles": ["styles/styles.css"],
 	"url": "#{URL}#",
-	"manifest": "#{MANIFEST}#",
+	"manifest": "https://github.com/strongpauly/foundry-vtt-mirror-image/releases/latest/download/module.json",
 	"download": "#{DOWNLOAD}#",
   "compatibility": {
     "minimum": "11",
