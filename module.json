@@ -1,38 +1,36 @@
 {
-  "id": "foundry-vtt-mirror-image",
-  "title": "Mirror Image",
-  "description": "Module to handle the mirror image spell in D&D and Pathfinder",
-  "version": "#{VERSION}#",
-  "authors": [
-    {
-      "name": "Paul Potsides",
-      "flags": {}
-    }
-  ],
-  "socket": true,
-  "esmodules": [
-    "scripts/index.mjs"
-  ],
-  "styles": ["styles/styles.css"],
+	"id": "foundry-vtt-mirror-image",
+	"title": "Mirror Image",
+	"description": "Module to handle the mirror image spell in D&D and Pathfinder",
+	"version": "#{VERSION}#",
+	"authors": [
+		{
+			"name": "Paul Potsides",
+			"flags": {}
+		}
+	],
+	"socket": true,
+	"esmodules": ["scripts/index.mjs"],
+	"styles": ["styles/styles.css"],
 	"url": "#{URL}#",
 	"manifest": "https://github.com/strongpauly/foundry-vtt-mirror-image/releases/latest/download/module.json",
 	"download": "#{DOWNLOAD}#",
-  "compatibility": {
-    "minimum": "11",
-    "verified": "13",
-    "maximum": "13"
-  },
-  "relationships": {
-    "requires": [
-      {
-        "id": "tokenmagic",
-        "type": "module",
-        "manifest": "https://raw.githubusercontent.com/Feu-Secret/Tokenmagic/master/tokenmagic/module.json",
-        "compatibility": {
-          "minimum": "0.6.1.2",
-          "verified": "0.6.9"
-        }
-      }
-    ]
-  }
+	"compatibility": {
+		"minimum": "11",
+		"verified": "13",
+		"maximum": "14"
+	},
+	"relationships": {
+		"requires": [
+			{
+				"id": "tokenmagic",
+				"type": "module",
+				"manifest": "https://raw.githubusercontent.com/Feu-Secret/Tokenmagic/master/tokenmagic/module.json",
+				"compatibility": {
+					"minimum": "0.6.1.2",
+					"verified": "0.6.9"
+				}
+			}
+		]
+	}
 }
